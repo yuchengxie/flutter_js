@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>React-web</title>
+</head>
+
+<body>
+    <button onclick="callFlutter()">Js调用原生</button>
+    <button onclick="callJS('hidden')">原生调用Js隐藏</button>
+    <button onclick="callJS('visible')">原生调用Js显示</button>
+    <p id="p1" style="visibility:visible;">
+        显示隐藏哦😄?
+    </p>
+</body>
+
+</html>
+
+<script>
+    function callJS(message) {
+        console.log(message);
+        document.getElementById("p1").style.visibility = message;
+    }
+
+    function callFlutter() {
+        /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+        document.location = "js://webview?arg1=111&args2=222";
+    }
+
+</script>
